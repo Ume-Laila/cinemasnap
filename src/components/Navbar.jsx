@@ -5,9 +5,9 @@ import {
   FiFilm,
   FiMenu,
   FiSearch,
-  FiSparkles,
   FiX,
 } from 'react-icons/fi'
+import { HiSparkles } from 'react-icons/hi2'
 
 const STORAGE_KEY = 'cinemasnap_watchlist'
 
@@ -55,7 +55,7 @@ const Navbar = () => {
       {
         to: '/mood',
         label: 'Mood Picker',
-        icon: FiSparkles,
+        icon: HiSparkles,
       },
     ],
     [watchlistCount],
@@ -168,3 +168,4 @@ const Navbar = () => {
 }
 
 export default Navbar
+
