@@ -1,16 +1,19 @@
-﻿import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import HomePage from './pages/HomePage'
 import MovieDetailPage from './pages/MovieDetailPage'
 import SearchPage from './pages/SearchPage'
 import WatchlistPage from './pages/WatchlistPage'
 import MoodPage from './pages/MoodPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen bg-[#0a0a0f] text-slate-100">
         <Navbar />
         <main className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
@@ -20,6 +23,7 @@ function App() {
             <Route path="/search" element={<SearchPage />} />
             <Route path="/watchlist" element={<WatchlistPage />} />
             <Route path="/mood" element={<MoodPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
         <Footer />
