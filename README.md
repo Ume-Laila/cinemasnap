@@ -12,7 +12,7 @@
 
 ## 🚀 Live Demo
 
-[**[https://cinemasnap.vercel.app](your-vercel-link-here)**](https://cinemasnap-two.vercel.app/)
+(https://cinemasnap-two.vercel.app/)
 
 ---
 
