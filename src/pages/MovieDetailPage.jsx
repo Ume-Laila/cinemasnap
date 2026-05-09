@@ -8,14 +8,14 @@ import { useWatchlist } from '../hooks/useWatchlist'
 
 const formatRuntime = (minutes) => {
   if (!minutes || Number.isNaN(minutes)) return 'N/A'
-  const hrs = Math.floor(minutes / 60)
+  const hours = Math.floor(minutes / 60)
   const mins = minutes % 60
-  return `${hrs}h ${mins}m`
+  return `${hours}h ${mins}m`
 }
 
 const formatMoney = (value) => {
   if (!value || value <= 0) return 'N/A'
-  const millions = value / 1_000_000
+  const millions = value / 1000000
   return `$${millions.toFixed(1)}M`
 }
 
@@ -100,7 +100,7 @@ const MovieDetailPage = () => {
   if (loading) {
     return (
       <div className="space-y-10 pb-8">
-        <section className="left-1/2 right-1/2 relative min-h-[85svh] w-screen -translate-x-1/2 overflow-hidden border-b border-[#1e1e2e] bg-[#12121a]">
+        <section className="relative left-1/2 right-1/2 min-h-[85svh] w-screen -translate-x-1/2 overflow-hidden border-b border-[#1e1e2e] bg-[#12121a]">
           <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-slate-700/30 via-slate-600/10 to-slate-800/20" />
           <div className="relative z-10 mx-auto flex min-h-[85svh] w-full max-w-7xl items-end px-4 pb-12 pt-28 sm:px-6 lg:px-8">
             <div className="flex w-full flex-col gap-6 md:flex-row md:items-end">
@@ -161,7 +161,7 @@ const MovieDetailPage = () => {
 
   return (
     <div className="space-y-12 pb-8">
-      <section className="left-1/2 right-1/2 relative w-screen -translate-x-1/2 overflow-hidden border-b border-[#1e1e2e]">
+      <section className="relative left-1/2 right-1/2 w-screen -translate-x-1/2 overflow-hidden border-b border-[#1e1e2e]">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -197,15 +197,15 @@ const MovieDetailPage = () => {
 
               {movie.tagline ? <p className="italic text-slate-300">{movie.tagline}</p> : null}
 
-              <div className="flex flex-wrap items-center gap-3 text-sm text-slate-200">
+              <div className="flex flex-wrap items-center gap-2 text-sm text-slate-200">
                 <span className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-black/35 px-3 py-1">
                   <FiStar className="text-[#e11d48]" />
                   {voteAverage}
                 </span>
                 <span>{voteCount} votes</span>
-                <span className="text-slate-400">•</span>
+                <span>|</span>
                 <span>{releaseYear}</span>
-                <span className="text-slate-400">•</span>
+                <span>|</span>
                 <span>{formatRuntime(movie.runtime)}</span>
               </div>
 
